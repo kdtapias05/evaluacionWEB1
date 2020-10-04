@@ -38,6 +38,26 @@
          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
        </form>
        </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navbar-brand" href="index.php">evaluacion WEB 1</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+<a class="nav-link" href="ejercicio1.php">Ejercicio 1</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="ejercicio2.php">Ejercicio 2</a>
+    </li>
+    <li class="nav-item">
+<a class="nav-link" href="ejercicio3.php">Ejercicio 3</a>
+    </li>
+    <li class="nav-item">
+<a class="nav-link" href="ejercicio4.php">Ejercicio 4</a>
+    </li>
+    </ul>
+    </div>
+
 </NAV>
 
 </HEAder>
@@ -45,7 +65,7 @@
 <MAIN>
 <div class="container-fluid">
             <h1 class="text-center">CALCULADORA</h1>
-            <h4 class="text-center">Este es un programa en PHP que permite mostrar la suma, resta, multiplicación y división de dos números enteros almacenados en 2 variables diferentes (utilice formularios HTML).</h4>
+            <h4 class="text-center">Permite realizar operaciones como Suma, Resta, Multiplicacion y Division entre dos numeros</h4>
             <form action="evaluacionweb1.php" method="POST">
                 <div class="form-group row mt-3 justify-content-center">
                     <label for="number1" class="col-1">Número 1</label>
@@ -55,7 +75,7 @@
                 </div>
                 <div class="form-group row mt-3 justify-content-center">
                     <select name="operator" id="operator" class="form-control offset-1 col-5">
-                        <option value="" selected disabled>Selecciona una operacion</option>
+                        <option value="" selected disabled>Escoge una opcion</option>
                         <option value="add">Sumar</option>
                         <option value="rest">Restar</option>
                         <option value="multiplication">Multiplicar</option>
@@ -65,14 +85,14 @@
                 
                 <div class="form-group row justify-content-center">
                     <div class="col-1">
-                        <button type="submit" name ="calcular" class="btn btn-primary">Calcular</button>
+                        <button type="submit" name ="realizaroperacion" class="btn btn-dark">Realizar Operacion</button>
                     </div>
                 </div>
             </form>
 
             <?php 
                 $result = 0;
-                if(isset($_POST['calcular'])) : ?>
+                if(isset($_POST['realizaroperacion'])) : ?>
                     <?php 
                         if(!empty($_POST['operator'])) {
                             $operator = $_POST['operator'];
