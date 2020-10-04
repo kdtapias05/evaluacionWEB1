@@ -46,66 +46,67 @@
 <main>
 
 <div class="container-fluid">
-        <h1 class="text-center">CÁLCULOS ENTRE 2 NÚMEROS</h1>
-        <form action="ejercicio1.php" method="POST">
-            <div class="form-group row mt-3 justify-content-center">
-                <label for="number1" class="col-1">Número 1</label>
-                <input type="number" name="number1" id="number1" class="form-control col-2"  placeholder="Número 1">
-                <label for="number2" class="col-1">Número 2</label>
-                <input type="number" class="form-control col-2" name="number2" id="number2" placeholder="Número 2">
-            </div>
-            <div class="form-group row mt-3 justify-content-center">
-                <select name="operator" id="operator" class="form-control offset-1 col-5">
-                    <option value="" selected disabled>Selecciona una operacion</option>
-                    <option value="add">Sumar</option>
-                    <option value="rest">Restar</option>
-                    <option value="multiplication">Multiplicar</option>
-                    <option value="divide">Dividir</option>
-                </select>
-            </div>
+    <h1 class="text-center mt-3"><img src="images.jpg" alt="Imagen1" width = "400px"></h1>
+    <h1 class="text-center">CALCULATOR</h1>
+    <form action="ejercicio1.php" method="POST">
+<div class="form-group row mt-3 justify-content-center">
+    <label for="number1" class="col-1">Número 1</label>
+    <input type="number" name="number1" id="number1" class="form-control col-2"  placeholder="Número 1">
+    <label for="number2" class="col-1">Número 2</label>
+    <input type="number" class="form-control col-2" name="number2" id="number2" placeholder="Número 2">
+</div>
+<div class="form-group row mt-3 justify-content-center">
+    <select name="operator" id="operator" class="form-control offset-1 col-5">
+    <option value="" selected disabled>Selecciona una operacion</option>
+    <option value="add">Sumar</option>
+    <option value="rest">Restar</option>
+    <option value="multiplication">Multiplicar</option>
+    <option value="divide">Dividir</option>
+    </select>
+</div>
             
-            <div class="form-group row justify-content-center">
-                <div class="col-1">
-                    <button type="submit" name ="calcular" class="btn btn-primary">Calcular</button>
-                </div>
-            </div>
-        </form>
+<div class="form-group row justify-content-center">
+<div class="col-1">
+    <button type="submit" name ="realizaroperacion" class="btn btn-dark">Realizar Operacion</button>
+</div>
+</div>
+    </form>
         
-        <?php if(isset($_POST['calcular'])) : ?>
+ <?php if(isset($_POST['realizaroperacion'])) : ?>
         
-        <?php 
-            if(!empty($_POST['operator'])) {
-                $operator = $_POST['operator'];
+ <?php 
+    if(!empty($_POST['operator'])) {
+    $operator = $_POST['operator'];
                 
-                $number1 = isset($_POST['number1']);
-                $number2 = isset($_POST['number2']);
+    $number1 = isset($_POST['number1']);
+    $number2 = isset($_POST['number2']);
                 
-                if ($operator == "add") {
+    if ($operator == "add") {
                     
-                    $result = $_POST["number1"] + $_POST["number2"];
+    $result = $_POST["number1"] + $_POST["number2"];
                     
-                }
-                else if ($operator == "rest") {
-                    $result = $_POST["number1"] - $_POST["number2"];
-                }
-                else if ($operator == "multiplication") {
-                    $result = $_POST["number1"] * $_POST["number2"];
-                }
-                else {
-                    $result = $_POST["number1"] / $_POST["number2"];
-                }
-            }
-            else {
-                echo 'No se ha seleccionado ningún operador';     
-            }
-        ?>
+    }
+    else if ($operator == "rest") {
+    $result = $_POST["number1"] - $_POST["number2"];
+    }
+    else if ($operator == "multiplication") {
+    $result = $_POST["number1"] * $_POST["number2"];
+    }
+    else {
+    $result = $_POST["number1"] / $_POST["number2"];
+    }
+    }
+    else {
+    echo 'No se ha seleccionado ningún operador';     
+    }
+   ?>
                 
-                <h4 class="text-center">
-                    <?php echo("El resultado de la operación es: ". $result) ?>
-                </h4>
+    <h4 class="text-center">
+      <?php echo("El resultado de la operación es: ". $result) ?>
+    </h4>
 
-                    <h4></h4>
-                <?php endif ?>
+     <h4></h4>
+     <?php endif ?>
 
    
     </div>

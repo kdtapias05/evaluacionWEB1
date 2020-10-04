@@ -106,12 +106,12 @@
             
 <div class="form-group row justify-content-center">
 <div class="col-1">
-        <button type="submit" name ="calculate" class="btn btn-dark">CALCULAR</button>
+        <button type="submit" name ="calcular" class="btn btn-dark">CALCULAR</button>
 </div>
 </div>
 </form>
 
-        <?php if(isset($_POST["send"])) :?>
+        <?php if(isset($_POST["calcular"])) :?>
         <?php
             $salaryB = 40000000;
             $salaryC = 32000000;
